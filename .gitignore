@@ -1,2 +1,4 @@
-/library/
-/Image/
+/library
+/image
+/env
+/__pycache__
