@@ -155,8 +155,8 @@ def selected_book(url):
             "url": response.url,
             "universal_product_code": universal_product_code,
             "title": title,
-            "PriceIncludingVat": price_including_vat,
-            "PriceExcludingVat": price_excluding_vat,
+            "price_including_vat": price_including_vat,
+            "price_excluding_vat": price_excluding_vat,
             "available": int(number_available),
             "category": category[0],
             "ratings": ratings,
@@ -171,12 +171,12 @@ def selected_book(url):
 
 def download_image(url, category, title):
     # Create folder if it doesn't exist
-    if not os.path.exists(f"Image/{category}"):
-        os.makedirs(f"Image/{category}")
+    if not os.path.exists(f"image/{category}"):
+        os.makedirs(f"image/{category}")
 
     file_extension = get_extension(url)
     file_title = clean_title(title)
-    image_path = os.path.join(f"Image/{category}", file_title + file_extension)
+    image_path = os.path.join(f"image/{category}", file_title + file_extension)
 
     response = requests.get(url)
 
